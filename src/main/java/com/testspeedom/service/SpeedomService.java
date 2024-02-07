@@ -4,6 +4,7 @@ import com.testspeedom.repository.SpeedomRepository;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Log4j2
@@ -30,13 +31,19 @@ public class SpeedomService {
 
     }
 
+    @Transactional
     public int speedUpdateService(){
 
 
         log.debug("Update Service");
 
+        speedomRepository.updateSpeedom();
 
+        Integer SPData = speedomRepository.getSpeedom();
 
-        return speedomRepository.updateSpeedom();
+        log.info("업데이트");
+        log.info(SPData);
+
+        return SPData;
     }
 }
