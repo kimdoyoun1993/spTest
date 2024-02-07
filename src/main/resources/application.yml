@@ -1,0 +1,21 @@
+
+server:
+  port: 9090
+  servlet:
+    context-path: /
+
+spring:
+  datasource:
+    url: jdbc:mariadb://ramiverse.com:43306/speedom
+    username: rami
+    password: rami0601!
+    driver-class-name: org.mariadb.jdbc.Driver
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+mybatis:
+  type-aliases-package: com.example.speedom
+  mapper-locations: classpath:repository/*.xml
+  configuration:
+    map-underscore-to-camel-case: true

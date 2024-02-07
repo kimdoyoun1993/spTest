@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.testspeedom.repository.SpeedomRepository">
+
+
+    <insert id="insertSpeedom">
+        insert into speedom(speedom)values (1);
+    </insert>
+
+    <select id="getSpeedom" resultType="Integer">
+        select speedom from speedom where sp ="speedom";
+    </select>
+
+    <update id="updateSpeedom">
+        update speedom set speedom =FLOOR(1000+RAND()*1001) where sp = "speedom"
+    </update>
+
+
+</mapper>
