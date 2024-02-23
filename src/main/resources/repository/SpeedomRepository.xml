@@ -7,15 +7,15 @@
 
 
     <insert id="insertSpeedom">
-        insert into speedom(speedom)values (1);
+        insert into spdn(spdnVal, spdnTamp) VALUES (1,NOW() );
     </insert>
 
     <select id="getSpeedom" resultType="Integer">
-        select speedom from speedom where sp ="speedom";
+        select spdnVal from spdn where spdnId =1;
     </select>
 
     <update id="updateSpeedom">
-        update speedom set speedom =FLOOR(1000+RAND()*1001) where sp = "speedom"
+        update spdn set spdnVal =FLOOR(1+RAND()*99) ,spdnTamp=NOW() where spdnId = 1
     </update>
 
 

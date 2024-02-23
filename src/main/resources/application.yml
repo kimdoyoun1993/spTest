@@ -6,9 +6,9 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mariadb://ramiverse.com:43306/speedom
-    username: rami
-    password: rami0601!
+    url: jdbc:mariadb://141.164.58.68:3306/FSQUARE
+    username: ficfack
+    password: FFvlr!vor2
     driver-class-name: org.mariadb.jdbc.Driver
   mvc:
     pathmatch:

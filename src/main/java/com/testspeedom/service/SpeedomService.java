@@ -16,7 +16,6 @@ public class SpeedomService {
 
         log.debug("get Service");
 
-
         return speedomRepository.getSpeedom();
 
     }
@@ -24,8 +23,6 @@ public class SpeedomService {
     public int speedSetService(){
 
         log.debug("Set Service");
-
-
 
         return  speedomRepository.insertSpeedom();
 
@@ -42,7 +39,6 @@ public class SpeedomService {
         Integer SPData = speedomRepository.getSpeedom();
 
         log.info("업데이트");
-        log.info(SPData);
 
         return SPData;
     }
