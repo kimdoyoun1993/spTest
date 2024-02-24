@@ -10,13 +10,12 @@
         insert into spdn(spdnVal, spdnTamp) VALUES (1,NOW() );
     </insert>
 
-    <select id="getSpeedom" resultType="Integer">
-        select spdnVal from spdn where spdnId =1;
+    <select id="getSpeedom" resultType="com.testspeedom.dto.SpeedomDto">
+        select spdnVal,spdnTamp from spdn where spdnId =1;
     </select>
 
     <update id="updateSpeedom">
         update spdn set spdnVal =FLOOR(1+RAND()*99) ,spdnTamp=NOW() where spdnId = 1
     </update>
-
 
 </mapper>

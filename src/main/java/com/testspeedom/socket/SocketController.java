@@ -1,4 +1,5 @@
 package com.testspeedom.socket;
+import com.testspeedom.dto.SpeedomDto;
 import com.testspeedom.repository.SpeedomRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -9,6 +10,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Random;
 @CrossOrigin(origins = "http://localhost:5173")
 @RestController
@@ -22,17 +24,17 @@ public class SocketController {
     @Autowired
     SpeedomRepository speedomRepository;
 
-    Integer SPData;
+    SpeedomDto SPData;
 
 
-    public int setRandomNumber() {
+    public SpeedomDto setRandomNumber() {
         SPData = speedomRepository.getSpeedom();
         this.template.convertAndSend("/topic/random-number", SPData);
         return SPData;
     }
 
     @GetMapping("/random-number")
-    public int getRandomNumber() {
+    public SpeedomDto getRandomNumber() {
         setRandomNumber();
 
 //        try {

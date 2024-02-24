@@ -1,10 +1,13 @@
 package com.testspeedom.service;
 
+import com.testspeedom.dto.SpeedomDto;
 import com.testspeedom.repository.SpeedomRepository;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 @Log4j2
@@ -12,11 +15,12 @@ public class SpeedomService {
     @Autowired
     SpeedomRepository speedomRepository;
 
-    public int speedGetService(){
+    public SpeedomDto speedGetService(){
 
         log.debug("get Service");
 
-        return speedomRepository.getSpeedom();
+        SpeedomDto spData = speedomRepository.getSpeedom();
+        return spData;
 
     }
 
@@ -29,14 +33,14 @@ public class SpeedomService {
     }
 
     @Transactional
-    public int speedUpdateService(){
+    public SpeedomDto speedUpdateService(){
 
 
         log.debug("Update Service");
 
         speedomRepository.updateSpeedom();
 
-        Integer SPData = speedomRepository.getSpeedom();
+        SpeedomDto SPData = speedomRepository.getSpeedom();
 
         log.info("업데이트");
 

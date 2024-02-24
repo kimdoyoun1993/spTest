@@ -1,9 +1,12 @@
 package com.testspeedom.controller;
 
+import com.testspeedom.dto.SpeedomDto;
 import com.testspeedom.service.SpeedomService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Log4j2
 @RestController
@@ -14,7 +17,7 @@ public class SpeedomController {
     SpeedomService service;
 
     @GetMapping("/get")
-    public int getSpeedom(){
+    public SpeedomDto getSpeedom(){
         log.debug("get");
         return service.speedGetService();
     }
@@ -26,7 +29,7 @@ public class SpeedomController {
     }
 
     @PutMapping("/update")
-    public int updateSpeedom(){
+    public SpeedomDto updateSpeedom(){
         log.debug("update");
         return service.speedUpdateService();
     }
